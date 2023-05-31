@@ -217,7 +217,8 @@ export function ExpenseItem(props) {
 
     return (
         <div className='expense-item'>
-            <div>{expenseDate.toLocaleDateString()}</div>{/* JavaScript Date objects doesn't parse into JSX, so you have to convert it to a string. */}
+            {/* JavaScript Date objects doesn't parse into JSX, so you have to convert it to a string. */}
+            <div>{expenseDate.toLocaleDateString()}</div>
             <div className='expense-item__description'>
                 <h2>{expenseTitle}</h2>
                 <div className='expense-item__price'>${expenseAmount}</div>
@@ -229,3 +230,7 @@ export function ExpenseItem(props) {
 
 Note: You don't have to use ```props``` as the argument. You can name it anything
 you want
+
+### Props can be passed to other components
+
+
