@@ -1,9 +1,10 @@
 import {ExpenseDisplay} from "./components/Expenses/ExpenseDisplay";
+import {NewExpense} from "./components/NewExpense/NewExpense";
 
 function App() {
     return(
         <div>
-            <h2>Let's get started</h2>
+            <NewExpense />
             <ExpenseDisplay />
         </div>
     )
