@@ -14,12 +14,23 @@ export function ExpenseDisplay (props) {
         setDate(date)
     }
 
+    // Filter function to filter the year. Returns a filtered array based on the selected year in the filter year dropdown
+    const filteredExpenses = props.items.filter(e => {
+        return e.date.getFullYear().toString() === enteredDate;
+    })
+
     return (
         <div>
             <Card className="expenses">
                 <ExpenseFilter default={enteredDate} onChangeDate={dateHandler} />
                 {/* Render ExpenseItem component for each expense object in the array in App.js  */}
-                {props.items.map(e => <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date} />)}
+                {/*
+                    If the filtered list has a length of 0, display a message stating there are no expenses,
+                    otherwise output the list of ExpenseItem objects
+                */}
+                {filteredExpenses.length === 0 ?
+                    (<p>No expenses found</p>) :
+                    filteredExpenses.map(e => <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date} />)}
             </Card>
         </div>
     );
