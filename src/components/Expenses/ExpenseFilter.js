@@ -4,8 +4,8 @@ export function ExpenseFilter(props) {
 
     // Event listener when the year changes on the dropdown
     const dateChangeHandler = (event) => {
-        props.onChangeDate(event.target.value)
-    }
+        props.onChangeDate(event.target.value);
+    };
 
     return (
         <div className='expenses-filter'>

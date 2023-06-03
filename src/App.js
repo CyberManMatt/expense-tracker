@@ -36,15 +36,15 @@ function App() {
         // Update the state of Dummy Data array by returning an array with the new expense object along with the other objects
         setExpenses((prevExpenses) => {
             return [expense, ...prevExpenses]
-        })
-    }
+        });
+    };
 
     return(
         <div>
             <NewExpense onAddExpense={addExpenseHandler} />
             <ExpenseDisplay items={expenses}/>
         </div>
-    )
+    );
 }
 
 export default App;
