@@ -32,15 +32,13 @@ export function ExpenseForm(props) {
         // Create an expenseData object
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
 
         // Custom event handler that is called from the NewExpense component as a prop
         props.onSaveExpenseData(expenseData);
-        setEnteredTitle("");
-        setEnteredDate("");
-        setEnteredAmount("");
+        props.onCancel();
     };
 
     return (
